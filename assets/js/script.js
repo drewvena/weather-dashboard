@@ -7,7 +7,7 @@ myFunction=function() {
     var searchHistory = JSON.parse(localStorage.getItem("search")) || [];
     console.log(searchHistory);
     
-    var APIkey = "5bbac74e67189da529f39b7f6dbd81ba";
+    var APIkey = "";
     function getWeather(cityName) {
 
                  fetch( "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + APIkey)
