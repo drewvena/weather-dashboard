@@ -10,10 +10,9 @@
     <title>Weather Dashboard </title>
 </head>
 <body>
-    <div class="bg-dark pt-2 pb-2">
-        <div class="container">
-            <h1 class="text-center text-white">Weather Dashboard</h1>
-        </div>
+    <nav class="navbar navbar-dark bg-dark">
+        <span class="navbar-brand mb-0 h1 w-100 text-center"><h1>Weather Dashboard</h1></span>
+    </nav>
     </div>
     <div class="container">
         <div class="row">
@@ -21,7 +20,7 @@
                 <p class="search-header my-1">Search for a city</p>
                 <div class="input-group mb-3">
                     <input id="city-input" type="text" class="form-control" placeholder="Enter city name" aria-label="Enter city name">
-                    <div class="input-group-append">
+                    <div id="input-group">
                         <button class="btn btn-primary" type="button" id="search-button">
                             <i class="fas fa-search"></i>
                         </button>
@@ -35,7 +34,7 @@
                     <div class="col-12 border border-dark m-3 rounded">
                         <div class="row">
                             <div class="col-12">
-                                <span id="city-name" class="city-name align-middle"></span>
+                                <span id="city-name" ></span>
                                 <img id="current-pic" src="" alt="">
                             </div>
                         </div>
@@ -76,6 +75,7 @@
             </div>
         </div>
     </div>
+
  <script src="./assets/script.js"></script>   
 </body>
 </html>
