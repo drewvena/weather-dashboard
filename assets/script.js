@@ -10,3 +10,4 @@ function initPage() {
     var currentWindEl = document.querySelector("#wind-speed");
     var currentUVEl = document.querySelector("#UV-index");
     var historyEl = document.querySelector("#history");
+}
