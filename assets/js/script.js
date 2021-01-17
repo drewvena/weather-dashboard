@@ -52,7 +52,7 @@ myFunction=function() {
             })
             
             
-            var forcastURL = "https://api.openweathermap.org/data/2.5/forecast?q="+cityName+"&appid="+APIkey;
+            var forcastURL = "https://api.openweathermap.org/data/2.5/forecast?q="+cityName+"&appid="+APIkey + "&units=imperial";
             fetch (forcastURL) 
             
             .then(function(response){
@@ -76,6 +76,12 @@ myFunction=function() {
                     forecastWeatherEl.setAttribute("src","https://openweathermap.org/img/wn/" + response.list[forecastIndex].weather[0].icon + "@2x.png");
                     forecastWeatherEl.setAttribute("alt",response.list[forecastIndex].weather[0].description);
                     forecastEl[i].append(forecastWeatherEl);
+                    var forecastHumidityEl= document.createElement('p');
+                    var forecastTempEl = document. createElement('p');
+                    forecastTempEl.innerHTML = "Temp: "+ response.list[forecastIndex].main.temp + " F"
+                    forecastEl[i].append(forecastTempEl)
+                    forecastHumidityEl.innerHTML = "Humidity: " + response.list[forecastIndex].main.humidity + "%";
+                    forecastEl[i].append(forecastHumidityEl);
                 }
             })
                 })
