@@ -64,13 +64,13 @@ myFunction=function() {
                 for (i=0; i<forecastEl.length; i++) {
                     forecastEl.innerHTML="";
                     var forecastIndex = i*8 + 4;
-                    var forecastDate = new Date (response.list[forecastIndex].dt*1000);
+                    var forecastDate = new Date (response.list[forecastIndex].dt*1000 );
                     var forecastDay = forecastDate.getDate();
-                    var forecastMonth = forecastDate.getMonth();
+                    var forecastMonth = forecastDate.getMonth() + 1;
                     var forecastYear = forecastDate.getFullYear();
                     var forecastDateEl = document.createElement('p');
                     forecastDateEl.setAttribute("class","mt-3 mb-0 forecast-date");
-                    forecastDateEl.innerHTML= forecastMonth + "/"+forecastDay + "/" + forecastYear;
+                    forecastDateEl.innerHTML= forecastMonth + "/"+forecastDay  + "/" + forecastYear;
                     forecastEl[i].append(forecastDateEl);
                     var forecastWeatherEl = document.createElement("img");
                     forecastWeatherEl.setAttribute("src","https://openweathermap.org/img/wn/" + response.list[forecastIndex].weather[0].icon + "@2x.png");
