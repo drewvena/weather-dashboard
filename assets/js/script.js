@@ -82,7 +82,9 @@ myFunction=function() {
                     forecastEl[i].append(forecastTempEl)
                     forecastHumidityEl.innerHTML = "Humidity: " + response.list[forecastIndex].main.humidity + "%";
                     forecastEl[i].append(forecastHumidityEl);
+   
                 }
+
             })
                 })
             
@@ -96,6 +98,7 @@ myFunction=function() {
                 localStorage.setItem("search",JSON.stringify(searchHistory));
                 renderSearchHistory();
                 
+                
             })
             clearEl.addEventListener("click",function() {
                 searchHistory = [];
@@ -107,7 +110,6 @@ myFunction=function() {
                 historyEl.innerHTML = "";
                 for (let i=0; i<searchHistory.length; i++) {
                     var historyItem = document.createElement("input");
-                    // <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com"></input>
                     historyItem.setAttribute("type","text");
                     historyItem.setAttribute("readonly",true);
                     historyItem.setAttribute("class", "form-control d-block bg-white");
@@ -116,11 +118,11 @@ myFunction=function() {
                         getWeather(historyItem.value);
                     })
                     historyEl.append(historyItem);
+
                 }
             }
         
-            renderSearchHistory();
-        
+    
       
 }
 myFunction();
